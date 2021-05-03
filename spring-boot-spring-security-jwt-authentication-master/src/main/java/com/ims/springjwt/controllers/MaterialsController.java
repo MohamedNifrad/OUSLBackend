@@ -34,4 +34,10 @@ public class MaterialsController {
         return materialsService.fetchMaterialsBasedOnUserService(userId);
     }
 
+    @GetMapping("/get-materials-available/{materialId}")
+    public int getMaterialsAvailable(@PathVariable Long materialId)
+    {
+        return materialsService.quantityAvailable(materialId);
+    }
+
 }

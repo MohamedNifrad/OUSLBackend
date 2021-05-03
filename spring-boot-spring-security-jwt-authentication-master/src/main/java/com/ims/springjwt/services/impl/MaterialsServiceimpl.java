@@ -28,4 +28,12 @@ public class MaterialsServiceimpl implements MaterialsService {
     public List<Materials> fetchMaterialsBasedOnUserService(Long userId) {
         return materialsRepository.fetchMaterialsBasedOnUser(userId);
     }
+
+    @Override
+    public int quantityAvailable(Long materialId) {
+        int x = materialsRepository.countUserMaterials(materialId);
+        int y = materialsRepository.findById(materialId).get().getQty();
+        int z = y - x;
+        return z;
+    }
 }

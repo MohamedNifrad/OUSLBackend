@@ -11,4 +11,6 @@ public interface MaterialsService {
     public List<Materials> getMaterialsServices();
 
     List<Materials> fetchMaterialsBasedOnUserService(Long userId);
+
+    int quantityAvailable(Long materialId);
 }
